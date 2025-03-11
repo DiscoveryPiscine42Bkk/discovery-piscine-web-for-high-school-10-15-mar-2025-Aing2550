@@ -1,3 +1,1 @@
-ls -p | grep -v '^\.' | tr '
-' ',' | sed 's/,$/
-/'
+ls -p | grep -vE '^\.' | tr '\n' ','
