@@ -1,4 +1,4 @@
-/* Reset default margin & padding */
+
 * {
   margin: 0;
   padding: 0;
@@ -9,22 +9,22 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Parallax Section */
+
 .parallax {
-  height: 100vh; /* Full viewport height */
+  height: 100vh; 
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
+  color: black;
   font-size: 2em;
   font-weight: bold;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Enables Parallax Effect */
+  background-attachment: fixed; 
 }
 
-/* Background Images */
+
 .img1 {
   background-image: url('https://race.nstru.ac.th/home_ex/blog/pic/cover/s9662.jpg'); /* Replace with your image */
 }
@@ -33,7 +33,7 @@ body {
   background-image: url('https://www.techtalkthai.com/wp-content/uploads/2025/01/deepseek-logo-640x335.png'); /* Replace with your image */
 }
 
-/* Content Section */
+
 .content {
   padding: 50px;
   text-align: center;
