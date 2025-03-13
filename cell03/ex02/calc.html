@@ -4,52 +4,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculation App</title>
+    <title>Noob's Calculator</title>
+   
 </head>
 <body>
-    <label for="num1">Number 1:</label>
-    <input type="number" id="num1" min="0">
-    
-    <label for="simbals">shose simbals</label>
-    <input type="text"  id="simbals"> 
 
-    <label for="num2">Number 2:</label>
-    <input type="number" id="num2" min="0">
+    <h1>Noob's Calculator</h1>
+
+    <input type="text" id="a" placeholder="Enter first number">
     
-    <button id="calculate">Try me!</button>
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    
+    <input type="text" id="b" placeholder="Enter second number">
+    
+    <button onclick="calculate()">Try me!</button>
 
     <script>
-        function calculate(){
-            let x = num1;
-            let y = num2;
-            let z = x+y;
-            document.write (z);
+        function calculate() {
+            let a =document.getElementById("a").value;
+            let b =document.getElementById("b").value;
+            let operator = document.getElementById("operator").value;
 
-            // Validate input
-            if (isNaN(a) || isNaN(b) || a < 0 || b < 0) {
-                alert('Error :(');
-                console.log('Error :(');
+            
+            if (a <= 0 || b <= 0) {
+                alert("Error :(");
                 return;
             }
 
+            let num1 = parseInt(a);
+            let num2 = parseInt(b);
+
+            let result;
+
             
-            if (b === 0) {
+            if ((operator === "/" || operator === "%") && num2 === 0) {
                 alert("It's over 9000!");
                 console.log("It's over 9000!");
                 return;
             }
 
-            alert(result);
-            console.log(result);
+            
+            
+            if  (operator==='+'){
+                result = num1 + num2; }
+              if  (operator==='-'){
+                result = num1 - num2; }
+                if  (operator==='*'){
+                    result = num1 * num2; }
+                    if  (operator==='/'){
+                        result = num1 / num2; }
+                        if  (operator==='%'){
+                            result = num1 % num2; }
+                            
+                
+                
+            
+
+            
+            alert("Result: " + result);
+            console.log("Result: " + result);
         }
 
-        // Add event listener to button
-        document.getElementById('calculate').addEventListener('click', calculate);
-
-        // Alert every 30 seconds
+        
         setInterval(() => {
-            alert('Please, use me...');
+            alert("Please, use me...(ToT)");
         }, 30000);
     </script>
+
 </body>
 </html>
