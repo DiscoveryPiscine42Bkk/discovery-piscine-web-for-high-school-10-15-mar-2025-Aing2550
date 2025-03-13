@@ -1,29 +1,25 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เปลี่ยนสีพื้นหลังแบบสุ่ม</title>
-    <style>
-        body {
-            transition: background-color 0.3s;
-        }
-
-        /* กำหนดสีพื้นหลังที่ต้องการ */
-        @keyframes changeColor {
-            0% { background-color: lightblue; }
-            25% { background-color: lightgreen; }
-            50% { background-color: lightcoral; }
-            75% { background-color: lightsalmon; }
-            100% { background-color: lightpink; }
-        }
-
-        button:focus {
-            animation: changeColor 0.5s steps(1) forwards;
-        }
-    </style>
+    <link src="stylesheet" href="backgroound.css">
+    <title>Random Background Color</title>
+    
 </head>
 <body>
-    <button>กดเพื่อเปลี่ยนสี</button>
+
+    <button class="btn" onclick="changeBackground()">Click Me!</button>
+
+    <script>
+        function changeBackground() {
+            // Generate random color
+            let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+            
+            // Apply to body
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+
 </body>
 </html>
