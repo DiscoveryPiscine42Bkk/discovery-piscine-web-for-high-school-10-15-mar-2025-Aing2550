@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เปลี่ยนสีพื้นหลังแบบสุ่ม</title>
+    <style>
+        body {
+            transition: background-color 0.3s;
+        }
+
+        /* กำหนดสีพื้นหลังที่ต้องการ */
+        @keyframes changeColor {
+            0% { background-color: lightblue; }
+            25% { background-color: lightgreen; }
+            50% { background-color: lightcoral; }
+            75% { background-color: lightsalmon; }
+            100% { background-color: lightpink; }
+        }
+
+        button:focus {
+            animation: changeColor 0.5s steps(1) forwards;
+        }
+    </style>
+</head>
+<body>
+    <button>กดเพื่อเปลี่ยนสี</button>
+</body>
+</html>

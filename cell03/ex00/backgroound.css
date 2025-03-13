@@ -1,0 +1,20 @@
+body{
+transition: background-color 0.3s;
+}
+@keyframes changecolor{
+    10% {background-color: black;}
+    10% {background-color: blue;}
+    10% {background-color: aqua;}
+    10% {background-color: crimson;}
+    10% {background-color: rgb(0, 255, 153);}
+    10% {background-color: rgb(255, 102, 0);}
+    10% {background-color: rgb(255, 0, 217);}
+    10% {background-color: rgb(37, 87, 5);}
+    10% {background-color: rgb(0, 241, 253);}
+    10% {background-color: rgb(184, 0, 235);}
+   
+}
+button :focus{
+    animation: changecolor 0.5s steps(1) forwards;
+
+}
