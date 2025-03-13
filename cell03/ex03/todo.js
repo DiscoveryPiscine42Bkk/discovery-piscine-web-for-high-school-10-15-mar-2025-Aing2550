@@ -1,5 +1,5 @@
 
-        // Load existing tasks from cookies
+        
         document.addEventListener("DOMContentLoaded", () => {
             let tasks = getTasksFromCookies();
             tasks.forEach(task => addTaskToDOM(task));
@@ -18,7 +18,7 @@
             taskDiv.className = "todo-item";
             taskDiv.textContent = taskText;
             
-            // Add click event for deletion
+            
             taskDiv.addEventListener("click", () => {
                 let confirmDelete = confirm("Do you want to delete this task?");
                 if (confirmDelete) {
@@ -27,7 +27,7 @@
                 }
             });
 
-            // Insert at the top of the list
+            
             let taskList = document.getElementById("ft_list");
             taskList.insertBefore(taskDiv, taskList.firstChild);
         }

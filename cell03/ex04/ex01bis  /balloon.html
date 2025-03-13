@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balloon</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    #balloon {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+  </style>
+</head>
+<body>
+  <div id="balloon"></div>
+
+  <!-- Add jQuery Library -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      const $balloon = $('#balloon');
+      let size = 200;
+      let colorIndex = 0;
+      const colors = ['red', 'green', 'blue'];
+
+      function updateColor() {
+        $balloon.css("background-color", colors[colorIndex]);
+        colorIndex = (colorIndex + 1) % colors.length;
+      }
+
+      $balloon.on('click', function() {
+        size = (size >= 420) ? 200 : size + 10;
+        $balloon.css({ "width": size + "px", "height": size + "px" });
+        updateColor();
+      });
+
+      $balloon.on('mouseleave', function() {
+        if (size > 200) {
+          size -= 5;
+        }
+        $balloon.css({ "width": size + "px", "height": size + "px" });
+        colorIndex = (colorIndex - 1 + colors.length) % colors.length; // Reverse color order
+        $balloon.css("background-color", colors[colorIndex]);
+      });
+    });
+  </script>
+</body>
+</html>
