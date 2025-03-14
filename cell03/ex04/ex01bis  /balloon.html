@@ -27,7 +27,7 @@
 <body>
   <div id="balloon"></div>
 
-  <!-- Add jQuery Library -->
+  
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <script>
@@ -53,7 +53,7 @@
           size -= 5;
         }
         $balloon.css({ "width": size + "px", "height": size + "px" });
-        colorIndex = (colorIndex - 1 + colors.length) % colors.length; // Reverse color order
+        colorIndex = (colorIndex - 1 + colors.length) % colors.length; 
         $balloon.css("background-color", colors[colorIndex]);
       });
     });

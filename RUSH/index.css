@@ -1,101 +1,66 @@
-body {
+ody {
+    height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* จัดตรงกลางแนวนอน */
+    align-items: center; /* จัดตรงกลางแนวตั้ง */
     margin: 0;
-    background-size: cover;
-    background-position: center center;
     background-repeat: no-repeat;
-    font-family: Impact;
-    
 }
 
+/* กล่องครอบ Profile Cards */
+.container {
+    display: flex;
+    gap: 20vh; /* ระยะห่างระหว่างการ์ด */
+}
+
+
+/* สไตล์ของโปรไฟล์การ์ด */
 .profile-card {
-    
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 200px;
-    height: 300px;
+    background: white;
+    padding: 30px;
+    border-radius: 50px;
+    height: auto;
+    max-width: 350px;
     border-radius: 30px;
-    background-color: aliceblue;
-}
-.insite-card{
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    
-    width: 170px;
-    height: 190px;
-    border-radius: 10%;
-    background-image: radial-gradient(#ddb7fa,#13bb86);
-
-}
-.nickname {
-    font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 2px;
-    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.306);
+    text-align: center;
+    width: 100%;
+    margin: 20px auto;
+    transition: all 0.3s ease;
 }
 
 
-.profile-pic {
-    width: 110%;
-    height: 110%;
-    background: none;
+/* ปรับสไตล์ของรูปโปรไฟล์ */
+.profile-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease;
-    
 }
-.profile-pic:hover{
+.profile-card img:hover{
     transform: scale(1.2);
 }
- 
-.fulname{
-    font-size: 15px;
-    font-weight: bold;
-    margin: 5px 0;
+@media (max-width: 768px) {
+    .profile-card {
+        width: 90%;    /* Adjust card width for tablets */
+        padding: 20px; /* Reduce padding for tablets */
+        height: auto;  /* Adjust height for responsiveness */
+    }
+
+    .profile-card img {
+        height: 50%;   /* Adjust image size for smaller screens */
+    }
 }
 
+@media (max-width: 480px) {
+    .profile-card {
+        width: 95%;    /* Adjust width for mobile screens */
+        padding: 15px; /* Further reduce padding on mobile */
+    }
 
-.discribe {
-    font-size: 14px;
-    color: gray;
-    margin-bottom: 5px;
-}
-
-.loca {
-    font-size: 14px;
-    font-weight: bold;
-}
-
-
-.social-icons {
-    margin: 10px 0;
-}
-
-.social-icons img {
-    width: 24px;
-    margin: 0 5px;
-    border-radius: 10%;
-}
-
-
-.contact-btn {
-    background: black;
-    color: white;
-    border: none;
-    padding: 10px;
-    width: 100%;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-h1{
-    position: absolute;
-    color: #a6a6a6;
-    bottom: 0;
-    right: 0;
-    margin: 20px;
-    font-family: Impact;
-    
+    .profile-card img {
+        height: 40%;   /* Adjust image size for mobile screens */
+    }
 }

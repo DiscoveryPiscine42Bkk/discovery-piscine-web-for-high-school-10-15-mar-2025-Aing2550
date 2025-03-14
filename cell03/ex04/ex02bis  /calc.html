@@ -24,7 +24,7 @@
     
     <button id="calculate-btn">Try me!</button>
 
-    <!-- Add jQuery Library -->
+   
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
@@ -34,7 +34,7 @@
                 let b = $("#b").val().trim();
                 let operator = $("#operator").val();
 
-                // Validate input
+                
                 if (a === "" || b === "" || isNaN(a) || isNaN(b)) {
                     alert("Please enter valid numbers.");
                     return;
@@ -44,14 +44,13 @@
                 let num2 = parseFloat(b);
                 let result;
 
-                // Prevent division or modulo by zero
+                
                 if ((operator === "/" || operator === "%") && num2 === 0) {
                     alert("It's over 9000!");
                     console.log("It's over 9000!");
                     return;
                 }
 
-                // Perform calculation
                 switch (operator) {
                     case '+': result = num1 + num2; break;
                     case '-': result = num1 - num2; break;
@@ -65,12 +64,12 @@
                 console.log("Result: " + result);
             }
 
-            // Auto alert every 30 seconds
+            
             setInterval(() => {
                 alert("Please, use me...(ToT)");
             }, 30000);
 
-            // Bind function to button click
+            
             $("#calculate-btn").on("click", calculate);
         });
     </script>
