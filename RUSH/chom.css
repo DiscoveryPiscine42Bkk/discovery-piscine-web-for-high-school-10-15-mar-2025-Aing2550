@@ -129,3 +129,19 @@ margin-top: 4px;
     color: #e1e0e0;
     
 }
+.certificate {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 คอลัมน์ */
+    grid-template-rows: repeat(6, auto);   /* 6 แถว */
+    gap: 10px;  
+    background: linear-gradient(to right, #fccdfd, #f9735b);
+    width: 100%;
+    height: 100vh;      
+                        /* ระยะห่างระหว่างรูป */
+  }
+
+
+.imgroup{
+    margin-top: 100px;
+    width: 50%;
+}
