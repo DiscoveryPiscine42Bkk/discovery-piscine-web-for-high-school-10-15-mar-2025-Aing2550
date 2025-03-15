@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Website</title>
-    <link rel="stylesheet" href="chom.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="chom.css"> 
     <style>
         * {
             margin: 0;
@@ -13,161 +13,414 @@
         }
         body {
             font-family: Arial, sans-serif;
+            min-height: 100vh;
         }
-        .navbar {
-            display: flex;
-            justify-content: center;
-            padding: 15px 20px;
-            background: linear-gradient(to right, #000000, #a7a7a7);
-            color: white;
+        nav {
+            background-color: #000000;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
         }
-        .nav-links {
+        nav ul {
+            width: 100px;
             list-style: none;
             display: flex;
+            justify-content: flex-end;
+            align-items: center;
         }
-        .nav-links li {
-            margin: 0 15px;
+        nav li {
+            height: 50px;
         }
-        .nav-links a img {
-            height: 30px;
+        nav a {
+            height: 100%;
+            padding: 0 30px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            color: black;
         }
-        .menu-toggle {
+        nav a:hover {
+            background-color: #f5f5f5;
+        }
+        nav li:first-child {
+            margin-right: auto;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            z-index: 999;
+            background-color: #f5f5f5;
+            box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
             display: none;
-            cursor: pointer;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            background: #000000;
+            transition: all 0.3s;
+            backdrop-filter: blur(5px);
         }
-        .menu-toggle img {
+        .sidebar li {
+            width: 100%;
+        }
+        .sidebar a {
+            width: 100%;
+        }
+        .menubutton {
+            display: block;
+            float: left;
+            margin-top: 20px;
+        }
+        li img {
+            width: 30px;
             height: 30px;
+            margin-left: 10px;
         }
         @media (max-width: 768px) {
-            .nav-links {
+            .hideonmobile {
                 display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                width: 100%;
-                background: linear-gradient(to right, #000000, #a7a7a7);
-                text-align: center;
             }
             .nav-links.active {
-                display: block;
+                display: flex;
             }
-            .menu-toggle {
-                display: block;
-                position: absolute;
-                right: 20px;
-                top: 15px;
+            .name {
+                width: 100%;
+                height: auto;
+            }
+        }
+        @media (max-width: 480px) {
+            .sidebar {
+                width: 100%;
+            }
+            .name {
+                width: 100%;
+                height: auto;
             }
         }
         .name {
             background: linear-gradient(to right, #fccdfd, #f9735b);
             width: 100%;
             height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+            max-width: 100%;
+        }
+        .beginpic {
+            float: right;
+            max-width: 32%;
         }
         .fname {
-            font-size: 60px;
-            color: white;
+            font-size: 10rem;
+            color: aliceblue;
             font-family: Impact;
-            margin: 10px 0;
+            margin-left: 50px;
+        }
+        .gap {
+            background-color: #000000;
+            width: 100%;
+            height: 10vh;
         }
         .about {
             background: linear-gradient(to right, #000000, #a7a7a7);
             width: 100%;
-            padding: 50px 20px;
-            text-align: center;
+            height: 120vh;
         }
-        .gap { margin-bottom: 15px; }
         .card {
             border-radius: 20px;
-            background: white;
-            width: 90%;
-            max-width: 400px;
-            margin: 20px auto;
-            padding: 20px;
+            float: left;
+            margin-left: 50px;
+            background-color: white;
+            width: 500px;
+            height: 650px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
         }
         .incard {
             background: radial-gradient(#fb7358, #fccdfd);
             border-radius: 20px;
-            padding: 20px;
+            margin-top: 52px;
+            width: 450px;
+            height: 400px;
+            margin-left: 25px;
         }
         .imgcard {
-            width: 60%;
+            width: 59%;
+            margin-top: 4px;
         }
         .abouth {
-            font-size: 60px;
+            margin-right: 230px;
+        }
+        .abouthe {
+            font-size: 100px;
             color: #fccdfd;
-            margin-top: 20px;
-            text-align: center;
+            float: right;
+        }
+        .mh {
+            border-radius: 20px;
+            font-size: 100px;
+            background-color: rgb(161, 246, 64);
+            width: 150px;
+            height: 120px;
+            float: right;
+            margin-left: 25px;
         }
         .abtme {
-            text-align: center;
-            font-size: 24px;
+            margin-top: 100px;
+            margin-left: 180px;
+            font-size: 50px;
+            float: left;
             color: #e1e0e0;
-            padding: 20px;
         }
+        .cerh {
+            font-size: 100px;
+            color: #f5f5f5;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(6, auto);
+            gap: 10px;
+        }
+        .image-grid img {
+            width: 90%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .certificate {
+            background: linear-gradient(to right, #fccdfd, #f9735b);
+            width: 100%;
+            height: 170vh;
+            text-align: center;
+        }
+        .contact {
+            width: 100%;
+            height: 30vh;
+            background: linear-gradient(to right, #000000, #a7a7a7);
+        }
+        .contact img {
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            margin-left: 50px;
+            margin-top: 5px;
+        }
+        ul {
+            float: left;
+            margin-left: 50px;
+            color: #f5f5f5;
+            font-size: 1.5rem;
+        }
+
+        /* เพิ่ม Media Queries สำหรับ Responsive Design */
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-                position: absolute;
+            .fname {
+                font-size: 6rem;
+            }
+            .beginpic {
+                max-width: 50%;
                 right: 20px;
+                top: 15%;
             }
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 50px;
-                right: 0;
-                background: #000000;
-                width: 100%;
-                text-align: center;
-                padding: 10px 0;
+            .name {
+                padding-left: 20px;
             }
-            .nav-links.active {
-                display: flex;
+            .about, .certificate, .contact {
+                padding: 30px;
+            }
+            .card {
+                padding: 15px;
+            }
+            .imgcard {
+                width: 50%;
+            }
+            .abtme {
+                font-size: 1rem;
+            }
+            .contact img {
+                width: 40px;
+                height: 40px;
+            }
+            .image-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
-    </style>
+
+        @media (max-width: 480px) {
+            .fname {
+                font-size: 4rem;
+            }
+            .beginpic {
+                max-width: 70%;
+                right: 10px;
+                top: 10%;
+            }
+            .name {
+                padding-left: 10px;
+            }
+            .about, .certificate, .contact {
+                padding: 20px;
+            }
+            .card {
+                padding: 10px;
+            }
+            .imgcard {
+                width: 40%;
+            }
+            .abtme {
+                font-size: 0.9rem;
+            }
+            .contact img {
+                width: 30px;
+                height: 30px;
+            }
+            .image-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 425px) {
+            .fname {
+                font-size: 3.5rem;
+            }
+            .beginpic {
+                max-width: 80%;
+                right: 5px;
+                top: 8%;
+            }
+            .name {
+                padding-left: 5px;
+            }
+            .about, .certificate, .contact {
+                padding: 15px;
+            }
+            .card {
+                padding: 5px;
+            }
+            .imgcard {
+                width: 35%;
+            }
+            .abtme {
+                font-size: 0.8rem;
+            }
+            .contact img {
+                width: 25px;
+                height: 25px;
+            }
+            .image-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        @media (max-width: 375px) {
+            .fname {
+                font-size: 3rem;
+            }
+            .beginpic {
+                max-width: 85%;
+                right: 5px;
+                top: 5%;
+            }
+            .name {
+                padding-left: 5px;
+            }
+            .about, .certificate, .contact {
+                padding: 10px;
+            }
+            .card {
+                padding: 5px;
+            }
+            .imgcard {
+                width: 30%;
+            }
+            .abtme {
+                font-size: 0.7rem;
+            }
+            .contact img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .fname {
+                font-size: 2.5rem;
+            }
+            .beginpic {
+                max-width: 90%;
+                right: 5px;
+                top: 5%;
+            }
+            .name {
+                padding-left: 5px;
+            }
+            .about, .certificate, .contact {
+                padding: 5px;
+            }
+            .card {
+                padding: 5px;
+            }
+            .imgcard {
+                width: 25%;
+            }
+            .abtme {
+                font-size: 0.6rem;
+            }
+            .contact img {
+                width: 15px;
+                height: 15px;
+            }
+        }
+    </style>  
 </head>
 <body>
-    <nav class="navbar">
-        <ul class="nav-links" id="navLinks">
-            <li class="homenav"><a href="index.html"><img src="home.webp" alt="home"></a></li>
-            <li><a href="#"><img src="about-icon.png" alt="About"></a></li>
-            <li><a href="#"><img src="home-icon.png" alt="certificate"></a></li>
-            <li><a href="#"><img src="contact-icon.png" alt="Contact"></a></li>
+    <nav>
+        <ul class="sidebar">
+            <li onclick=hide()><img src="close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" style="width: 30px;height: 30px;"></li>
+            <li><a href="index.html"><img src="home.webp"></a></li>
+            <li><a href="#about"><img src="per.png" alt="About"></a></li>
+            <li><a href="#certificate"><img src="prize.png" alt="certificate"></a></li>
+            <li><a href="#contact"><img src="ph.png" alt="Contact"></a></li>
         </ul>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <img src="menu.png" alt="Menu">
-        </div>
+        <ul style="float: left;">
+            <li class="menubutton" onclick=showsidebar()><a href="#"><img src="menu_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" style="width: 100px;height: 100px;"></a></li>
+        </ul>
     </nav>
     <script>
         function toggleMenu() {
             document.getElementById('navLinks').classList.toggle('active');
         }
+        function showsidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = "flex";
+        }
+        function hide() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = "none";
+        }
     </script>
     <div class="name">
         <img src="chomin.png" class="beginpic">
+        <br><br><br><br>
         <p class="fname">S&nbsp;A&nbsp;S&nbsp;I&nbsp;K&nbsp;A&nbsp;R&nbsp;N</p>
-        <p class="fname">D&nbsp;U&nbsp;N&nbsp;G&nbsp;J&nbsp;A&nbsp;N</p>
-        <p style="font-size: 20px;color: aliceblue;margin-left: 50px;"><b># TEKUNO</b></p>
+        <p class="fname">D&nbsp;A&nbsp;U&nbsp;N&nbsp;G&nbsp;J&nbsp;A&nbsp;N</p>
+        <p style="font-size: 35px;color: aliceblue;margin-left: 50px;"><b># TEKUNO</b></p>
     </div>
+
     <div class="gap"></div>
-    <div class="about">
-        <div class="mh">
-            <p><b>ME</b></p>
+
+    <div class="about" id="about">
+        <div class="abouth">
+            <br><br>
+            <div class="mh">
+                <p><b>ME</b></p>
+            </div>
+            <p class="abouthe"><b><u>ABOUT</u></b></p>
         </div>
-        <p class="abouth"><b><u>ABOUT</u></b></p>
         <div class="card">
             <div class="incard">
                 <img src="chomin.png" alt="" class="imgcard">
             </div><br><br>
-            <p style="font-size: 50px;"><b>CHOMPOO</b></h1><br><br>
+            <p style="font-size: 50px;"><b>CHOMPOO</b></h1><br>
             <p style="color: rgb(255, 234, 0);"><b>SASIKARN DUNGJAN</b></p>
         </div>
         <div class="abtme"><b>
@@ -178,6 +431,49 @@
             <p style="margin-bottom: 15px;">-SCHOOL : Watpapradoo school</p>
         </b></div>
     </div>
+    <div class="gap"></div>
+
+    <div class="certificate" id="certificate">
+        <br><br><h1 class="cerh">CERTIFICATE</h1><br>
+        <!-- ใส่รูปทั้งหมด 30 รูป -->
+        <div class="image-grid">
+            <img src="1.jpeg" alt="Image 1">
+            <img src="2.jpeg" alt="Image 2">
+            <img src="3.jpeg" alt="Image 3">
+            <img src="4.jpeg" alt="Image 4">
+            <img src="5.jpeg" alt="Image 5">
+            <img src="6.jpeg" alt="Image 6">
+            <img src="7.jpeg" alt="Image 7">
+            <img src="8.jpeg" alt="Image 8">
+            <img src="9.jpeg" alt="Image 9">
+            <img src="10.jpeg" alt="Image 10">
+            <img src="11.jpeg" alt="Image 11">
+            <img src="12.jpeg" alt="Image 12">
+            <img src="13.jpeg" alt="Image 13">
+            <img src="14.jpeg" alt="Image 14">
+            <img src="15.jpeg" alt="Image 15">
+            <img src="16.jpeg" alt="Image 16">
+            <img src="17.jpeg" alt="Image 17">
+            <img src="19.jpeg" alt="Image 19">
+            <img src="20.jpeg" alt="Image 20">
+            <img src="21.jpeg" alt="Image 21">
+            <img src="22.jpeg" alt="Image 22">
+            <img src="24.jpeg" alt="Image 24">
+            <img src="25.jpeg" alt="Image 25">
+            <img src="26.jpeg" alt="Image 26">
+        </div>
+    </div>
+    <div class="contact" id="contact"><br><br>
+        <h1 style="color: aliceblue;">Contact Me:</h1><br>
+        <a href="https://web.facebook.com/aing.aing.265153/"><img src="fac.png" alt=""></a>
+        <a href=""><img src="ig.webp" alt=""></a>
+        <a href=""><img src="git.png" alt=""></a>
+        <ul><b>
+            <li>facebook&nbsp;&nbsp;&nbsp;&nbsp;: Aing Aing</li>
+            <li>Instargram : aing_sutinan_12</li>
+            <li>Github &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Aing2550</li>
+            <li>Tel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 062-902-xxxx</li>
+        </b></ul>
+    </div>
 </body>
 </html>
-

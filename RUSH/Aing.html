@@ -1,8 +1,103 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="Chom.css">
-    </head>
-    <body>
-        
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="Aing.css">   
+</head>
+<body>
+    <nav>
+        <ul class="sidebar">
+            <li onclick=hide()><img src="close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" style="width: 30px;height: 30px;"></li>
+            <li><a href="index.html"><img src="home.webp"></a></li>
+            <li><a href="#about"><img src="per.png" alt="About"></a></li>
+            <li><a href="#certificate"><img src="prize.png" alt="certificate"></a></li>
+            <li><a href="#contact"><img src="ph.png" alt="Contact"></a></li>
+        </ul>
+        <ul style="float: left;">
+            <li class="menubutton" onclick=showsidebar()><a href="#"><img src="menu_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" style="width: 100px;height: 100px;"></a></li>
+        </ul>
+    </nav>
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+        function showsidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = "flex";
+        }
+        function hide() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = "none";
+        }
+    </script>
+    <div class="name">
+        <img src="aingin.png" class="beginpic">
+        <br><br><br><br>
+        <p class="fname">S&nbsp;U&nbsp;T&nbsp;I&nbsp;N&nbsp;A&nbsp;N</p>
+        <p class="fname">S&nbsp;R&nbsp;I&nbsp;V&nbsp;I&nbsp;S&nbsp;E&nbsp;T</p>
+        <p style="font-size: 35px;color: aliceblue;margin-left: 50px;"><b># TEKUNO</b></p>
+    </div>
+
+    <div class="gap"></div>
+
+    <div class="about" id="about">
+        <div class="abouth">
+            <br><br>
+            <div class="mh">
+                <p><b>ME</b></p>
+            </div>
+            <p class="abouthe"><b><u>ABOUT</u></b></p>
+        </div>
+        <div class="card">
+            <div class="incard">
+                <img src="aingin.png" alt="" class="imgcard">
+            </div><br>
+            <p class="nc"><b>Aing</b></p><br>
+            <p style="color: rgb(255, 234, 0);" class="fc"><b>SUTINAN SRIVISET</b></p>
+        </div>
+        <div class="abtme"><b>
+            <p style="margin-bottom: 15px;">-NAME : Sutinan Sriviset</p>
+            <p style="margin-bottom: 15px;">-NICKNAME : Aing</p>
+            <p style="margin-bottom: 15px;">-GRADE : 11</p>
+            <p style="margin-bottom: 15px;">-AGE : 17</p>
+            <p style="margin-bottom: 15px;">-SCHOOL : Watpapradoo school</p>
+        </b></div>
+    </div>
+    <div class="gap"></div>
+
+    <div class="certificate" id="certificate">
+        <br><br><h1 class="cerh">CERTIFICATE</h1><br>
+        <!-- ใส่รูปทั้งหมด 30 รูป -->
+        <div class="image-grid">
+            <img src="a1 (12).jpg" alt="Image 1">
+            <img src="a1 (2).jpg" alt="Image 2">
+            <img src="a1 (3).jpg" alt="Image 3">
+            <img src="a1 (4).jpg" alt="Image 4">
+            <img src="a1 (5).jpg" alt="Image 5">
+            <img src="a1 (6).jpg" alt="Image 6">
+            <img src="a1 (7).jpg" alt="Image 7">
+            <img src="a1 (8).jpg" alt="Image 8">
+            <img src="a1 (9).jpg" alt="Image 9">
+            <img src="a1 (10).jpg" alt="Image 10">
+            <img src="a1 (11).jpg" alt="Image 11">
+            <img src="a1 (1).jpg" alt="Image 12">
+            <img src="a1 (13).jpg" alt="Image 13">
+           
+        </div>
+    </div>
+    <div class="contact" id="contact">
+        <h1 style="color: aliceblue;">Contact Me:</h1><br>
+        <a href="https://web.facebook.com/aing.aing.265153/"><img src="fac.png" alt=""></a>
+        <a href="https://www.instagram.com/aing_sutinan_12?igsh=NmtjdHZ6aWV0d3po"><img src="ig.webp" alt=""></a>
+        <a href="https://github.com/Aing2550"><img src="git.png" alt=""></a>
+        <ul><b>
+            <li>facebook&nbsp;&nbsp;&nbsp;&nbsp;: Aing Aing</li>
+            <li>Instargram : aing_sutinan_12</li>
+            <li>Github &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Aing2550</li>
+            <li>Tel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 062-902-xxxx</li>
+        </b></ul>
+    </div>
+</body>
 </html>

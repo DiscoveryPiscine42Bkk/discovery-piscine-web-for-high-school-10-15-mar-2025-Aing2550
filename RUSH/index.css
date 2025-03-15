@@ -17,7 +17,7 @@ ody {
 /* สไตล์ของโปรไฟล์การ์ด */
 .profile-card {
     background: white;
-    padding: 30px;
+    padding: 20px;
     border-radius: 50px;
     height: auto;
     max-width: 350px;
@@ -52,6 +52,9 @@ ody {
     .profile-card img {
         height: 50%;   /* Adjust image size for smaller screens */
     }
+    .container{
+        gap: 15vh;
+    }
 }
 
 @media (max-width: 480px) {
@@ -63,4 +66,21 @@ ody {
     .profile-card img {
         height: 40%;   /* Adjust image size for mobile screens */
     }
+    .container{
+        gap: 10vh;
+    }
+}
+h2{
+    font-size: 2rem;
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+p{
+    font-size: 1rem;
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    margin-bottom: 10px;
 }
